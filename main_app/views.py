@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
 def home(request):
-    return HttpResponse('Meme Page!')
+    return render(request, 'home.html')
 
 def signup(request):
   # this will handle the POST request to /accounts/signup
