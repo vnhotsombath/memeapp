@@ -9,19 +9,15 @@ body {
     font-weight: 400;
 }
 
-.home-dogs {
-    display: flex;
-    justify-content: center;
-}
-
-.dogs {
-    width: 80%;
-    margin-top: 150px;
-}
 
 h1 {
     color: white;
     font-family: 'Staatliches', cursive;
+}
+
+.signup {
+    text-align: center;
+    font-size: 50px;
 }
 
 /* NAV STARTS HERE */
@@ -143,10 +139,7 @@ nav a:hover {
         
     }
 
-    /* #earth-logo {
-        width: 70px;
-    } */
-
+  
     nav {
         all: unset;
         grid-column: 3 / 4;
@@ -168,17 +161,11 @@ nav a:hover {
         opacity: 1;
     }
 
-    .dogs {
-        width: 50%;
-        margin-top: 150px;
-    }
-
+  
 
     .body-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap: 50px;
-        grid-row-gap: 10px;
+        display: flex;
+        justify-content: center;
         height: 250px;
         width: 85vw;
         margin: 0 auto;
@@ -186,17 +173,9 @@ nav a:hover {
 
   
 
-      .body-container img {
-        height: 100%;
-        width: 100%;
-        min-width: 250px;  /* this is what is making the boxes cut off when shrinking screen size */
-        object-fit: contain;
-        margin-top: 120px;
-        transition: transform 250ms;
-      } 
 
       .signup-container {
-        margin-top: 100px;
+        margin-top: 150px;
       }
 
 }
