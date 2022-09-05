@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import CreateView
+from .models import Meme
+
 
 # Create your views here.
 
@@ -28,3 +31,9 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+
+
+class MemeCreate(CreateView):
+  model = Meme
+  fields = ['title', 'caption',]
