@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Meme(models.Model):
-    title = models.CharField(max_length=250)
-    caption = models.TextField(max_length=100)
+    title = models.CharField(max_length=100)
+    caption = models.CharField(max_length=200)
     # image = models.ForeignKey(Image, on_delete=models.CASCADE)
     #category = models.ForeignKey(Category, on_Delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
