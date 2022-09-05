@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
+from django.views.generic import ListView
 from django.contrib.auth import login
 from .models import Meme, Photo
 import uuid
@@ -45,7 +46,8 @@ class MemeCreate(CreateView):
   fields = ['title', 'caption',]
   success_url= '/'
 
-
+# class MemeList(ListView):
+#   model = Meme
 
 def add_photo(request, meme_id):
   photo_file = request.FILES.get('photo-file', None)
@@ -59,3 +61,8 @@ def add_photo(request, meme_id):
     except:
       print('An error occured uploading file to S3')
   return redirect('detail', meme_id=meme_id)
+
+
+def memes_index(request):
+  memes = Meme.objects.all()
+  return render(request, 'meme/index.html', { 'memes': memes})
