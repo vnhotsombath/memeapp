@@ -22,11 +22,11 @@
 <!-- Insert photo markup below this comment -->
 
 <!-- new code below -->
-<form action="{% url 'add_image' meme.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+<form action="" enctype="multipart/form-data" method="POST" class="card-panel">
     {% csrf_token %}
-    <input type="file" name="image-file">
+    <input type="file" name="photo-file">
     <br><br>
-    <input type="submit" class="btn" value="Upload Image">
+    <input type="submit" class="btn" value="Upload Photo">
 </form>
 
 <!-- {% for image in meme.image_set.all %}
