@@ -17,4 +17,22 @@
     </table>
     <input type="submit" value="Submit!" class="btn">
   </form>
+
+</div>
+<!-- Insert photo markup below this comment -->
+
+<!-- new code below -->
+<form action="{% url 'add_image' meme.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+    {% csrf_token %}
+    <input type="file" name="image-file">
+    <br><br>
+    <input type="submit" class="btn" value="Upload Image">
+</form>
+
+<!-- {% for image in meme.image_set.all %}
+  <img class="responsive-img card-panel" src="{{image.url}}">
+{% empty %}
+  <div class="card-panel teal-text center-align">No Image Uploaded</div>
+{% endfor %} -->
+
 {% endblock %}
