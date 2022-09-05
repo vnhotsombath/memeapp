@@ -42,6 +42,7 @@ def signup(request):
 class MemeCreate(CreateView):
   model = Meme
   fields = ['title', 'caption',]
+  success_url= '/'
 
 
 
