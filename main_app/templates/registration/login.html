@@ -1,9 +1,48 @@
-<h1>Log In</h1>
+{% load static %}
 
-<!-- Add the login form -->
-<form method="post" action="{% url 'login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" class="btn" value="login">
-  <input type="hidden" name="next" value="{{ next }}">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style-form.css' %}">
+</head>
+<body>
+
+  <header>
+    <h1 class="logo">BeastCoast Memes</h1>
+    <!-- <a href="#" class="logo"><img id="earth-logo" src="https://lh3.googleusercontent.com/x54xta3ToFxaOYpePeXYgpCM7N8fG0TYT-WAaCwuy30NbfcBD9o8ZzuOVTi_yfUSWwtyXtNvOwhHgapFwnI7f3VJaC2UXaRfV72qeSD6G-mr6OQF7z7Uri0StpgdOK7IvR9mWMcd92ARm1H6Deouql204do5hOfhVZ2PJlbm7v84SPZB4Kku_0kRaoZkHdiOIjfAlsenn4kFEqeBXa0E2QH7U2MYK0Xe2hGiJFHrEmBY85AFX9Uj5uCVP-4BtXNBfDUtBeG-P2pElrEfjxKXsh--4CXnT3yrosE58Bz2Cu1YXQB0vuZ_ogPYPrMr_dByf8szZg63K2nGVYNARVaC1MrlE-x1f888m6pecp0dy80Ssye4B8gvN778RxW1JLxr_3WmiwkOtYY8RqOKeT5dx5vAK9Z20wyHx8jSSP9hZtI5SMcyHqJ8VuSi80NfqmMM2wE6BYZfMVoW1_4gegYiw0YzOLPIe8LJWkwERKaj6NEOg9xWEJGtvWWIhy3IPkIDSf4yD6yRHBcHtIsoK-NjJUpna1G_3XP2J1gGGFiHxY6zp7TX23omos_ULZvUzYm7lLwYUHS2ZOH90yHZYxgy8sOAMsLfxcEuJrcoUpqaDmN1lV91Wr1Y3LzzgdMg_f72VKRtyvHbe59ZaK6DLalNylfhR1ChTB9DvtMF6vqAgV2_dn1EliDC-8guEKngJOhAFr3DvzrPgov7TZg_yfi61TTDvy78ByRjnblY4Y7mAvzV2F0fuBEQxN5vofCG596xQ-gL5OckWmmNzlCgIFcWdKCQDKsGicohAg=w1098-h1104-no?authuser=0" alt=""></a> -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        <li><a href="/accounts/login">Login</a></li>
+      </ul>
+    </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+  </header>
+
+  <div class="body-container">
+    <div class="signup-container">
+      <h1 class="signup">Log In</h1>
+    <!-- Add the login form -->
+      <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="btn" value="login">
+      <input type="hidden" name="next" value="{{ next }}">
+    </form>
+  </div>
+</div>
+  
+</body>
+</html>
+
