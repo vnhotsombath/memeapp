@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
+from django.contrib.auth import login
 from .models import Meme, Photo
 import uuid
 import boto3
@@ -29,7 +30,7 @@ def signup(request):
       user = form.save()
       #This is how we log a user in via code
       login(request, user)
-      return redirect('index')
+      return redirect('/')
     else:
       error_message = 'Invalid sign up - try again'
 # A bad POST or GET request, so render signup.html with an empty form
