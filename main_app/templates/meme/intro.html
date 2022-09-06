@@ -1,11 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/intro.css' %}"></head>
 
 <body>
   <script src="script.js"></script>
@@ -61,7 +62,7 @@
     style="width:450px;height:400px; border-radius: 5%; ">     
 		</div>
 
-  <button class="proceed"><span>CLICK HERE TO PROCEED</span></button>
+  <button  class="proceed"><span><a href="{% url 'memes' %}">CLICK HERE TO PROCEED</a></span></button>
       
 		</div>
   </div>

@@ -66,3 +66,8 @@ def add_photo(request, meme_id):
 def memes_index(request):
   memes = Meme.objects.all()
   return render(request, 'meme/index.html', { 'memes': memes})
+
+
+
+def intro(request):
+  return render(request, 'meme/intro.html')
