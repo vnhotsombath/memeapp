@@ -179,29 +179,7 @@ nav a:hover {
     }
 
 
-    .body-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap: 50px;
-        grid-row-gap: 10px;
-        height: 250px;
-        width: 85vw;
-        margin: 0 auto;
-    }
 
   
-
-      .body-container img {
-        height: 100%;
-        width: 100%;
-        min-width: 250px;  /* this is what is making the boxes cut off when shrinking screen size */
-        object-fit: contain;
-        margin-top: 120px;
-        transition: transform 250ms;
-      } 
-
-      .signup-container {
-        margin-top: 100px;
-      }
 
 }

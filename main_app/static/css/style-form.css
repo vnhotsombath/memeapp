@@ -17,11 +17,25 @@ body {
 .body-container {
     display: flex;
     justify-content: center;
-    
 
 }
 
+    
+.red-text {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-family: 'Staatliches', cursive;
+    font-size: 30px;
+}
 
+
+.passwordrules {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Staatliches', cursive;
+}
 
 
 h1 {
@@ -228,6 +242,7 @@ nav a:hover {
       .signup-container {
         margin-top: 150px;
       }
-    
+
+
 
 }

@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Memes</h1>
+
 
 {% for meme in memes %}
-<div class="card">
+<div class="body-container">
+    <h1>Memes</h1>
     <!-- <a href="{% url 'detail' cat.id %}"> -->
-        <div class="card=content">
-            <span class="card-title">{{ meme.title }}</span>
+        <div>
+            <span>{{ meme.title }}</span>
             <p>Caption: {{ meme.caption }}</p>
         </div>
     </a>
