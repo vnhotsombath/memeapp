@@ -9,7 +9,10 @@ body {
     font-weight: 400;
 }
 
-
+h1 {
+    color: white;
+    font-family: 'Staatliches', cursive;
+}
 
 /* HOME PAGE */
 
@@ -36,11 +39,92 @@ body {
     color: white;
 }
 
+/* FORM PAGES */
 
-h1 {
-    color: white;
-    font-family: 'Staatliches', cursive;
+.form-container {
+    margin: 0 auto;
+    width: 50vw;
+    padding-top: 150px;
 }
+
+
+
+    
+.red-text {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-family: 'Staatliches', cursive;
+    font-size: 30px;
+}
+
+
+.passwordrules {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+
+
+.signup {
+    text-align: center;
+    font-size: 50px;
+}
+
+form ul {
+   display: none;
+}
+
+label {
+    font-family: 'Staatliches', cursive;
+    color: white;
+}
+
+form {
+    text-align: center;
+    
+}
+
+p {
+    font-size: 27px;
+}
+
+input {
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+
+.helptext {
+    display: none;
+}
+
+.btn {
+    text-align: center;
+    display: inline-block;
+    padding: 15px 40px;
+    border: 5px solid rgb(34, 34, 153);
+    cursor: pointer;
+    letter-spacing: 2px;
+    position:relative;
+    overflow:hidden;
+    margin: 0 20px;
+  }
+
+  .btn:hover {
+    border: 5px solid rgb(17, 17, 93);
+  }
+
+/* DETAIL PAGE */
+
+.detail-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+}
+
 
 /* NAV STARTS HERE */
 
