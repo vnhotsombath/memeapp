@@ -107,6 +107,10 @@ header {
     /* border-bottom: 1px solid white; */
 }
 
+.nav-logo {
+    text-decoration: none;
+    color: white;
+}
 
 .nav-toggle {
     display: none;
