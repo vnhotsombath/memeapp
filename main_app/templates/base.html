@@ -26,8 +26,6 @@
         <li><a href="/accounts/login">Login</a></li>
         <li><a href="{% url 'memes_create' %}">Post Meme</a></li>
         <li><a href="{% url 'memes' %}">All Memes</a></li>
-
-
       </ul>
     </nav>
     <label for="nav-toggle" class="nav-toggle-label">
@@ -35,6 +33,7 @@
     </label>
   </header>
 
+    
     {% block content %}
     {% endblock %}
 

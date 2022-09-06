@@ -43,7 +43,8 @@
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" class="btn" value="signup"> 
-            </form>
+            </form><br>
+            <p class="passwordrules">Your Password Must Contain at least 8 Characters, Cannot be Entirely Numeric, and cannont be too similar to your other information</p>
         </div>
             
     </div>
