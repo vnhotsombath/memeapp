@@ -2,17 +2,35 @@
 {% block content %}
 
 
+<div class="index-container">
 
-{% for meme in memes %}
-<div class="body-container">
-    <h1>Memes</h1>
-    <!-- <a href="{% url 'detail' cat.id %}"> -->
+    {% if object %}
+
+
+    {% for meme in memes %}
+
+    <h1 class="indexheader">Memes</h1>
         <div>
-            <span>{{ meme.title }}</span>
+            <p>{{ meme.title }}</p>
             <p>Caption: {{ meme.caption }}</p>
         </div>
-    </a>
+{% endfor %}
+{% else %}
+<h1 class="indexheader">No Memes</h1>
+{% endif %}
+
+    
 </div>
 
-{% endfor %}
+
+
+
+
+
+
+
 {% endblock %}
+
+
+
+

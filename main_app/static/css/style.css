@@ -10,6 +10,8 @@ body {
 }
 
 
+
+
 .home-dogs {
     display: flex;
     justify-content: center;
@@ -20,8 +22,16 @@ body {
     margin-top: 150px;
 }
 
+.index-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+}
 
-
+.indexheader {
+    font-size: 60px;
+    color: white;
+}
 
 
 h1 {
@@ -178,8 +188,11 @@ nav a:hover {
         margin-top: 150px;
     }
 
+ 
 
 
+
+ 
   
 
 }
