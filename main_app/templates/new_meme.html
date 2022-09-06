@@ -6,26 +6,28 @@
       
         <div class="form-container">
           <h1 class="signup">New Post</h1>
-<!-- {% if object %}
-<h1>Edit <span class="teal-text">{{object.name}}</span></h1>
+{% if object %}
+<h1>Edit <span class="teal-text">{{object.title}}</span></h1> 
 {% else %}
-<h1>Add Meme</h1>
-{% endif %} -->
-  <!-- Leaving the action empty makes the form post to the same url used to display it -->
-
-
-        
-        
+<h1>Add A Meme</h1>
+{% endif %}  
         <!-- Insert photo markup below this comment -->
 
         <!-- new code below -->
         <form action="{% url 'create_meme' %}" enctype="multipart/form-data" method="POST" class="card-panel">
             {% csrf_token %}
             <input type="file" name="photo-file">
-            <table>
+            <br><br>
+            <label for="title">Title:</label>
+            <input type="text" name="title">
+            <br><br>
+            <label for="caption">Caption:</label>
+            <input type="text" name="caption">
+            <br><br>
+            {% comment %} <table>
                 <!-- Render the inputs inside of <tr>s & <td>s -->
                 {{ form.as_p }}
-              </table>
+              </table> {% endcomment %}
             <br><br>
             <input type="submit" class="btn" value="Upload Photo">
         </form> 

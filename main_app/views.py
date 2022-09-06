@@ -5,6 +5,7 @@ from django.views.generic.edit import CreateView
 from django.views.generic import ListView
 from django.contrib.auth import login
 from .models import Meme
+from .forms import MemeForm
 import uuid
 import boto3
 
@@ -40,28 +41,31 @@ def signup(request):
   return render(request, 'registration/signup.html', context)
 
 
+def new_meme(request):
+  form = MemeForm(request.POST)
+  if form.is_valid():
+        # were creating an object to save to the database, but don't save yet, because
+        # we need to add meme_id
+        new_meme = form.save(commit=False)
+        new_meme.meme_id = meme_id
+        new_meme.save() # saves the meme to the database!
+    # import redirect at the top
+  return render(request, 'new_meme.html')
 
-class MemeCreate(CreateView):
-  model = Meme
-  fields = ['title', 'caption',]
-  success_url= '/'
-
-# class MemeList(ListView):
-#   model = Meme
-
-def add_photo(request, meme_id):
-  print(request.user, "req.user")
+def create_meme(request):
+  print("This works...$$$$$$$$$$")
   photo_file = request.FILES.get('photo-file', None)
+
   if photo_file:
     s3 = boto3.client('s3')
     key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
     try:
       s3.upload_fileobj(photo_file, BUCKET, key)
       url = f"{S3_BASE_URL}{BUCKET}/{key}"
-      Meme.objects.create(url=url, meme_id=meme_id, user=request.user)
+      Meme.objects.create(url=url, user=request.user)
     except:
       print('An error occured uploading file to S3')
-  return redirect('detail', meme_id=meme_id)
+  return redirect('detail')
 
 
 def memes_index(request):
