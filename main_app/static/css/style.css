@@ -47,8 +47,6 @@ h1 {
     padding-top: 150px;
 }
 
-
-
     
 .red-text {
     display: flex;
@@ -249,9 +247,6 @@ nav a:hover {
         
     }
 
-    /* #earth-logo {
-        width: 70px;
-    } */
 
     nav {
         all: unset;
@@ -279,11 +274,5 @@ nav a:hover {
         margin-top: 150px;
     }
 
- 
-
-
-
- 
-  
 
 }
