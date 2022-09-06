@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
 from django.views.generic import ListView
 from django.contrib.auth import login
-from .models import Meme, Photo
+from .models import Meme
 import uuid
 import boto3
 
@@ -50,6 +50,7 @@ class MemeCreate(CreateView):
 #   model = Meme
 
 def add_photo(request, meme_id):
+  print(request.user, "req.user")
   photo_file = request.FILES.get('photo-file', None)
   if photo_file:
     s3 = boto3.client('s3')
@@ -57,7 +58,7 @@ def add_photo(request, meme_id):
     try:
       s3.upload_fileobj(photo_file, BUCKET, key)
       url = f"{S3_BASE_URL}{BUCKET}/{key}"
-      Photo.objects.create(url=url, meme_id=meme_id)
+      Meme.objects.create(url=url, meme_id=meme_id, user=request.user)
     except:
       print('An error occured uploading file to S3')
   return redirect('detail', meme_id=meme_id)
