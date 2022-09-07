@@ -9,9 +9,8 @@ from .forms import MemeForm
 import uuid
 import boto3
 
-S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
-BUCKET ='beastcoastmemeapp'
-
+S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
+BUCKET ='beastcoastmeme'
 
 # Create your views here.
 
@@ -56,6 +55,8 @@ def new_meme(request):
 
 
 def create_meme(request):
+  print( request.POST.get('caption'), "<<<<<<<<<<<<<<<<<<<<<AWS CAPTION")
+  print( request.POST.get('title'), "<<<<<<<<<<<<<<<<<<<<<AWS CAPTION")
   photo_file = request.FILES.get('photo-file', None)
 
   if photo_file:
