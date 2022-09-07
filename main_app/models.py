@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse 
 
 # Create your models here.
 class Meme(models.Model):
@@ -10,11 +11,13 @@ class Meme(models.Model):
 
 
 class Comment(models.Model):
-    comment = models.TextField(max_length=250)
+    text = models.TextField(max_length=250)
     date = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    meme_id = models.ForeignKey(Meme, on_delete=models.CASCADE)
+    meme = models.ForeignKey(Meme, on_delete=models.CASCADE, null=True)
 
-    def __str__(self):
-        return f'{self.get_comment_display()} on {self.date}'
+  
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'meme_id': self.meme.id})
+        
 

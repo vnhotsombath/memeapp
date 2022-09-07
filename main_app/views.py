@@ -103,14 +103,15 @@ def add_comment(request, meme_id):
     form = CommentForm(request.POST)
     current_datetime = datetime.datetime.now()
     print(current_datetime, '<--------DATE')
-    print(request.POST.get('comment'), '<--------COMMENT')
-    print(request.user, '<--------USER')
-    print(meme_id, '<----------MEMEID')
+   #print(request.POST.get('comment'), '<--------COMMENT')
+    # print(request.user, '<--------USER')
+    # print(meme_id, '<----------MEMEID')
     if form.is_valid():
         new_comment = form.save(commit=False)
         new_comment.meme_id = meme_id
+        new_comment.user_id=request.user.id
+        #Comment.objects.create(user=request.user, meme_id=meme_id, comment=request.POST.get('comment'), date=current_datetime)
         new_comment.save()
-        Comment.objects.create(user=request.user, meme_id=meme_id, comment=request.POST.get('comment'), date=current_datetime)
       
 
     return redirect('detail', meme_id=meme_id)
