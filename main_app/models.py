@@ -11,7 +11,7 @@ class Meme(models.Model):
 
 class Comment(models.Model):
     comment = models.TextField(max_length=250)
-    date = models.DateField()
+    date = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     meme_id = models.ForeignKey(Meme, on_delete=models.CASCADE)
 
