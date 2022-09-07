@@ -3,34 +3,15 @@
 
 
 <div class="index-container">
-
-    {% if object %}
-
-
-    {% for meme in memes %}
-
-    <h1 class="indexheader">Memes</h1>
-        <div>
-            <p>{{ meme.title }}</p>
-            <p>Caption: {{ meme.caption }}</p>
-        </div>
-{% endfor %}
-{% else %}
-<h1 class="indexheader">No Memes</h1>
-{% endif %}
-
-    
+    <h1 class="indexh1">All Memes</h1>
+   <div class="body-container"> 
+        {% for meme in memes %}
+        <img src="{{ meme.image_url }}" alt="" class="index-img"> 
+    {% endfor %}
+    </div>
 </div>
 
-
-
-
-
-
-
-
 {% endblock %}
-
 
 
 

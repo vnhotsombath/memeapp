@@ -28,15 +28,21 @@ h1 {
 
 /* INDEX PAGE */ 
 
-.index-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 150px;
+
+
+.index-img {
+    width: 30%;
 }
 
 .indexheader {
     font-size: 60px;
     color: white;
+}
+
+.indexh1 {
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 60px;
 }
 
 /* FORM PAGES */
@@ -274,5 +280,42 @@ nav a:hover {
         margin-top: 150px;
     }
 
+    .index-memes {
+        display: flex;
+        justify-content: center;
+    }
+
+    .index-container {
+      
+        padding-top: 150px;
+
+    }
+
+    .body-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+        height: 250px;
+        width: 75vw;
+        margin: 0 auto;
+        
+    }
+
+    .body-container img {
+        height: 100%;
+        width: 100%;
+        min-width: 290px;  /* this is what is making the boxes cut off when shrinking screen size */
+        max-height: 350px;
+        object-fit: cover;
+        border: 2px solid rgb(0, 0, 0);
+        transition: transform 350ms;
+      }
+
+      .body-container img:hover {
+        transform: translateY(-2px);
+      }
+
+  
 
 }
