@@ -9,8 +9,8 @@ from .forms import MemeForm, CommentForm
 import uuid
 import boto3
 
-S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
-BUCKET ='beastcoastmeme'
+S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
+BUCKET ='beastcoastmemeapp'
 
 # Create your views here.
 
@@ -75,7 +75,7 @@ def create_meme(request):
     except:
       print('An error occured uploading file to S3')
 
-  return redirect('/')
+  return redirect('/memes')
 
 
 

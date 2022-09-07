@@ -152,6 +152,13 @@ input[type="file"] {
     padding-top: 150px;
 }
 
+.detail-img {
+    border: 2px solid black;
+}
+
+.red-desc {
+    color: red;
+}
 
 /* NAV STARTS HERE */
 
