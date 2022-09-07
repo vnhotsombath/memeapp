@@ -28,10 +28,32 @@ h1 {
 
 /* INDEX PAGE */ 
 
+.body-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    height: 250px;
+    width: 75vw;
+    margin: 0 auto;
+    
+}
 
+.body-container img {
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+    object-fit: cover;
+    border: 2px solid rgb(0, 0, 0);
+    /* transition: transform 350ms; */
+  }
+
+  .index-container {
+    padding-top: 150px;
+  }
 
 .index-img {
-    width: 30%;
+    width: 100%;
 }
 
 .indexheader {
@@ -150,14 +172,33 @@ input[type="file"] {
     display: flex;
     justify-content: center;
     padding-top: 150px;
+    
 }
 
 .detail-img {
     border: 2px solid black;
+    width: 100%;
 }
+
+
 
 .red-desc {
     color: red;
+}
+
+.post-bundle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  
+    width: 90%; 
+}
+
+.title-caption {
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    color: white;
+    font-size: 30px;
+
 }
 
 /* NAV STARTS HERE */
@@ -175,6 +216,7 @@ header {
 .nav-logo {
     text-decoration: none;
     color: white;
+
 }
 
 
@@ -198,7 +240,7 @@ header {
     display: block;
     background: white;
     height: 2px;
-    width: 2em;
+    width: 1em;
     border-radius: 2px;
     position: relative;
 }
@@ -331,6 +373,7 @@ nav a:hover {
         text-align: center;
         font-family: 'Staatliches', cursive;
         color: white;
+        font-size: 30px;
 
     }
 
@@ -359,6 +402,11 @@ nav a:hover {
         /* transform: translateY(-1.5px); */
         border: 2px solid rgb(208, 208, 208);
       }
+
+      .detail-img {
+        border: 2px solid black;
+        max-width: 450px;
+    }
 
   
 
