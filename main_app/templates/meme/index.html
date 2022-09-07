@@ -6,7 +6,11 @@
     <h1 class="indexh1">All Memes</h1>
    <div class="body-container"> 
         {% for meme in memes %}
-        <img src="{{ meme.image_url }}" alt="" class="index-img"> 
+        <div class="post-bundle">
+            <p class="title-caption"> {{ meme.title }}</p>
+            <img src="{{ meme.image_url }}" alt="" class="index-img"> 
+            <p class="title-caption"> {{ meme.caption }}</p>
+        </div>
     {% endfor %}
     </div>
 </div>

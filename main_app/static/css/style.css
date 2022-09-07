@@ -314,6 +314,19 @@ nav a:hover {
 
     }
 
+    .post-bundle {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;   
+    }
+
+    .title-caption {
+        text-align: center;
+        font-family: 'Staatliches', cursive;
+        color: white;
+
+    }
+
     .body-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
