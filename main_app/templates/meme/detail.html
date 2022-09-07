@@ -4,9 +4,10 @@
 <div class="detail-container">
 
     <div class="post-bundle">
-        <p class="title-caption"> {{ meme.title }}</p>
-        <a href="{% url 'detail' meme.id %}"><img src="{{ meme.image_url }}" alt="" class="title-caption"> </a>
-        <p class="title-caption"> {{ meme.caption }}</p>
+        <p class="title-caption"><span class="red-desc">Title:</span><br> {{ meme.title }}</p>
+        <p class="title-caption">Posted By: {{ meme.user }}</p>
+        <a href="{% url 'detail' meme.id %}"><img src="{{ meme.image_url }}" alt="" class="title-caption detail-img"> </a>
+        <p class="title-caption"><span class="red-desc">Caption:</span> {{ meme.caption }}</p>
     </div>
 
 </div>
