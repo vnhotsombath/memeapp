@@ -3,18 +3,19 @@
 
 <div class="detail-container">
 
-    <p class="title-caption"> {{ meme.title }}</p>
-    <img src="{{ meme.image_url }}" alt="" class="index-img"> 
-    <p class="title-caption"> {{ meme.caption }}</p>
-
-    
-    <form action="{% url 'add_comment' meme.id %}" method="POST">
-        {% csrf_token %}
-        {{comment_form.as_p}}
-        <input type="submit" class="btn" value="Add Comment" />
-    </form>
+    <div class="post-bundle">
+        <p class="title-caption"> {{ meme.title }}</p>
+        <a href="{% url 'detail' meme.id %}"><img src="{{ meme.image_url }}" alt="" class="title-caption"> </a>
+        <p class="title-caption"> {{ meme.caption }}</p>
+    </div>
 
 </div>
+
+<form action="{% url 'add_comment' meme.id %}" method="POST">
+    {% csrf_token %}
+    {{comment_form.as_p}}
+    <input type="submit" class="btn" value="Add Comment" />
+</form>
 
 
 
