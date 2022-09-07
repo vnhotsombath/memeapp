@@ -5,7 +5,7 @@ from django.views.generic.edit import CreateView
 from django.views.generic import ListView
 from django.contrib.auth import login
 from .models import Meme
-from .forms import MemeForm
+from .forms import MemeForm, CommentForm
 import uuid
 import boto3
 
@@ -92,4 +92,14 @@ def intro(request):
 
 def meme_detail(request, meme_id):
   meme = Meme.objects.get(id=meme_id)
-  return render(request,'meme/detail.html', {'meme': meme })
+  comment_form = CommentForm()
+  return render(request,'meme/detail.html', {'meme': meme, 'comment_form': comment_form})
+
+
+def add_comment(request, meme_id):
+    form = CommentForm(request.POST)
+    if form.is_valid():
+        new_comment = form.save(commit=False)
+        new_comment.meme_id = meme_id
+        new_comment.save() 
+    return redirect('detail', meme_id=meme_id)
