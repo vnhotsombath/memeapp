@@ -102,8 +102,13 @@ input {
 }
 
 input[type="file"] {
-    display: none;
+    font-size: 20px;
+    padding-left: 120px;
+    font-family: 'Staatliches', cursive;
+    color: white;
 }
+
+
 
 .custom-file-upload {
     border: 2px solid #ccc;

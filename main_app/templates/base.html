@@ -25,7 +25,6 @@
       <ul class="nav-links">
         <li><a href="{% url 'memes' %}">All Memes</a></li>
         {% if user.is_authenticated %}
-        
         <li><a href="{% url 'new_meme' %}">New Post</a></li>
         <li><a href="{% url 'intro' %}">intro</a></li>
         <li><a href="/accounts/logout">Logout</a></li>
