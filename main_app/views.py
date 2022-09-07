@@ -53,7 +53,6 @@ def new_meme(request):
   return render(request, 'new_meme.html')
 
 def create_meme(request):
-  print("This works...$$$$$$$$$$")
   photo_file = request.FILES.get('photo-file', None)
 
   if photo_file:
@@ -62,10 +61,15 @@ def create_meme(request):
     try:
       s3.upload_fileobj(photo_file, BUCKET, key)
       url = f"{S3_BASE_URL}{BUCKET}/{key}"
-      Meme.objects.create(url=url, user=request.user)
+
+      print(url, "<<<<<<<<<<<<<<<<<<<<<AWS URL")
+
+      Meme.objects.create(image_url=str(url), user=request.user, title="meme", caption="meme1")
+
     except:
       print('An error occured uploading file to S3')
-  return redirect('detail')
+
+  return redirect('/home')
 
 
 def memes_index(request):
