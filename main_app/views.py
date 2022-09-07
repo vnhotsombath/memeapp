@@ -9,9 +9,8 @@ from .forms import MemeForm
 import uuid
 import boto3
 
-S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
-BUCKET ='beastcoastmemeapp'
-
+S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
+BUCKET ='beastcoastmeme'
 
 # Create your views here.
 
@@ -56,8 +55,10 @@ def new_meme(request):
 
 
 def create_meme(request):
+ 
   photo_file = request.FILES.get('photo-file', None)
-
+  print( request.POST.get('caption'), "<<<<<<<<<<<<<<<<<<<<<AWS CAPTION")
+  print( request.POST.get('title'), "<<<<<<<<<<<<<<<<<<<<<AWS CAPTION")
   if photo_file:
     s3 = boto3.client('s3')
     key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
@@ -69,7 +70,7 @@ def create_meme(request):
       # print(request.user, "<--REQ.USER", request.title, "<-- REQ.TITLE", request.caption, "<---REQ.CAPTION")
       print('HELLLLLLOOOOOOOOOOO')
       print(request.user, 'request.user here')
-      Meme.objects.create(image_url=str(url), user=request.user, title="meme", caption="meme1")
+      Meme.objects.create(image_url=str(url), user=request.user, title=request.POST.get('title'), caption=request.POST.get('caption'),)
 
     except:
       print('An error occured uploading file to S3')
