@@ -9,8 +9,8 @@ from .forms import MemeForm
 import uuid
 import boto3
 
-S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
-BUCKET ='beastcoastmemeapp'
+S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
+BUCKET ='beastcoastmeme'
 
 # Create your views here.
 
@@ -88,3 +88,8 @@ def memes_index(request):
 
 def intro(request):
   return render(request, 'meme/intro.html')
+
+
+def meme_detail(request, meme_id):
+  meme = Meme.objects.get(id=meme_id)
+  return render(request,'meme/detail.html', {'meme': meme })

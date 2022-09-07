@@ -2,7 +2,9 @@
 {% block content %}
 
 <div class="detail-container">
-    <h1>fdfe</h1>
+    <p class="title-caption"> {{ meme.title }}</p>
+    <img src="{{ meme.image_url }}" alt="" class="index-img"> 
+    <p class="title-caption"> {{ meme.caption }}</p>
 </div>
 
 {% endblock %}
