@@ -101,5 +101,7 @@ def add_comment(request, meme_id):
     if form.is_valid():
         new_comment = form.save(commit=False)
         new_comment.meme_id = meme_id
-        new_comment.save() 
+        new_comment.save()
+    # Comment.objects.create(user=request.user, meme=request.meme_id, comment=request.POST.get('add_comment'), date=)
     return redirect('detail', meme_id=meme_id)
+
