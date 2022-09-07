@@ -309,11 +309,12 @@ nav a:hover {
         max-height: 350px;
         object-fit: cover;
         border: 2px solid rgb(0, 0, 0);
-        transition: transform 350ms;
+        /* transition: transform 350ms; */
       }
 
       .body-container img:hover {
-        transform: translateY(-2px);
+        /* transform: translateY(-1.5px); */
+        border: 2px solid rgb(208, 208, 208);
       }
 
   
