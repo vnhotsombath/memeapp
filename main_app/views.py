@@ -52,6 +52,9 @@ def new_meme(request):
     # import redirect at the top
   return render(request, 'new_meme.html')
 
+
+
+
 def create_meme(request):
   photo_file = request.FILES.get('photo-file', None)
 
@@ -72,6 +75,8 @@ def create_meme(request):
       print('An error occured uploading file to S3')
 
   return redirect('/')
+
+
 
 
 def memes_index(request):

@@ -84,6 +84,7 @@ form ul {
 label {
     font-family: 'Staatliches', cursive;
     color: white;
+    font-size: 27px;
 }
 
 form {
@@ -98,6 +99,21 @@ p {
 input {
     font-size: 24px;
     font-family: sans-serif;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 2px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover {
+    border: 2px solid rgb(15, 252, 62);
 }
 
 
@@ -120,6 +136,8 @@ input {
   .btn:hover {
     border: 5px solid rgb(17, 17, 93);
   }
+
+
 
 /* DETAIL PAGE */
 
@@ -220,7 +238,7 @@ nav a {
 }
 
 nav a:hover {
-    color:rgb(92, 92, 217);
+    color: rgb(15, 252, 62);
 }
 
 .nav-toggle:checked ~ nav {
@@ -309,11 +327,12 @@ nav a:hover {
         max-height: 350px;
         object-fit: cover;
         border: 2px solid rgb(0, 0, 0);
-        transition: transform 350ms;
+        /* transition: transform 350ms; */
       }
 
       .body-container img:hover {
-        transform: translateY(-2px);
+        /* transform: translateY(-1.5px); */
+        border: 2px solid rgb(208, 208, 208);
       }
 
   
