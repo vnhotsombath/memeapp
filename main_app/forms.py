@@ -6,10 +6,7 @@ class MemeForm(ModelForm):
 		model = Meme 
 		fields = ['title', 'caption', 'image_url']
 
-
-
-
 class CommentForm(ModelForm):
 	class Meta:
 		model = Comment 
-		fields = ['date', 'comment']
+		fields = ['date', 'text']

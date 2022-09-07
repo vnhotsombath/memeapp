@@ -18,6 +18,11 @@
     <input type="submit" class="btn" value="Add Comment" />
 </form>
 
+{% for comment in meme.comment_set.all %}
+<div>
+    <p>{{ comment.text }}</p>
+</div>
+{% endfor %}
 
 
 {% endblock %}
