@@ -4,13 +4,16 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
 from django.views.generic import ListView
 from django.contrib.auth import login
-from .models import Meme
+from .models import Meme, Comment
 from .forms import MemeForm, CommentForm
+import datetime
 import uuid
 import boto3
 
-S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
-BUCKET ='beastcoastmemeapp'
+
+S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
+BUCKET ='beastcoastmemer'
+
 
 # Create your views here.
 
@@ -98,10 +101,17 @@ def meme_detail(request, meme_id):
 
 def add_comment(request, meme_id):
     form = CommentForm(request.POST)
+    current_datetime = datetime.datetime.now()
+    print(current_datetime, '<--------DATE')
+    print(request.POST.get('comment'), '<--------COMMENT')
+    print(request.user, '<--------USER')
+    print(meme_id, '<----------MEMEID')
     if form.is_valid():
         new_comment = form.save(commit=False)
         new_comment.meme_id = meme_id
         new_comment.save()
-    # Comment.objects.create(user=request.user, meme=request.meme_id, comment=request.POST.get('add_comment'), date=)
+        Comment.objects.create(user=request.user, meme_id=meme_id, comment=request.POST.get('comment'), date=current_datetime)
+      
+
     return redirect('detail', meme_id=meme_id)
 

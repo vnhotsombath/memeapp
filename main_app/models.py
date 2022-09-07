@@ -15,4 +15,6 @@ class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     meme_id = models.ForeignKey(Meme, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f'{self.get_comment_display()} on {self.date}'
 
