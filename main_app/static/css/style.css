@@ -74,7 +74,7 @@ h1 {
 
 .comment-container {
     text-align: center;
-    border: 5px solid red;
+    border: 5px solid rgb(34, 34, 153);
     width: 90%;
     margin: 0 auto;
     background-color: white;
@@ -114,11 +114,16 @@ h1 {
     font-family: sans-serif;
 }
 
-
+.login-meme {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
 
 .signup {
     text-align: center;
-    font-size: 50px;
+    font-size: 60px;
 }
 
 form ul {
@@ -154,16 +159,7 @@ input[type="file"] {
 
 
 
-.custom-file-upload {
-    border: 2px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-}
 
-.custom-file-upload:hover {
-    border: 2px solid rgb(15, 252, 62);
-}
 
 
 .helptext {
@@ -193,7 +189,9 @@ input[type="file"] {
 .detail-container {
     display: flex;
     justify-content: center;
-    padding-top: 150px;
+    padding-top: 120px;
+    width: 90%;
+    margin: 0 auto;
     
 }
 
@@ -203,11 +201,29 @@ input[type="file"] {
 }
 
 
+/* .caption {
+    text-align: center;
+    border: 5px solid rgb(34, 34, 153);
+    background-color: white;
+} */
+
+.posted-by {
+    text-align: center;
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 40px;
+}
+
+/* .title {
+    text-align: center;
+    border: 5px solid rgb(34, 34, 153);
+    background-color: white;
+} */
 
 
 
 .red-desc {
-    color: red;
+    color:rgb(34, 34, 153);
 }
 
 .post-bundle {
@@ -220,8 +236,10 @@ input[type="file"] {
 .title-caption {
     text-align: center;
     font-family: 'Staatliches', cursive;
-    color: white;
+    color: black;
     font-size: 30px;
+    border: 5px solid rgb(34, 34, 153);
+    background-color: white;
 
 }
 
@@ -388,15 +406,14 @@ nav a:hover {
     }
 
     .post-bundle {
-        display: flex;
-        justify-content: center;
+        text-align: center;
         flex-direction: column;   
     }
 
     .title-caption {
         text-align: center;
         font-family: 'Staatliches', cursive;
-        color: white;
+        color: black;
         font-size: 30px;
 
     }
@@ -428,13 +445,22 @@ nav a:hover {
       }
 
       .detail-img {
-        border: 2px solid black;
+        border: 5px solid rgb(34, 34, 153);
         max-width: 600px;
     }
 
     .img {
         display: flex;
         justify-content: center;
+    }
+
+    .detail-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 150px;
+        width: 50%;
+        margin: 0 auto;
+        
     }
 
     .comment-container {

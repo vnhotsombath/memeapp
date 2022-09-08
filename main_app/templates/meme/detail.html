@@ -4,12 +4,13 @@
 <div class="detail-container">
 
     <div class="post-bundle">
-        <p class="title-caption"><span class="red-desc">Title:</span><br> {{ meme.title }}</p>
-        <p class="title-caption">Posted By: {{ meme.user }}</p>
+        
+        <p class="posted-by">Posted By: {{ meme.user }}</p>
         <div class="img">
             <img src="{{ meme.image_url }}" alt="" class="title-caption detail-img">
         </div>
-        <p class="title-caption"><span class="red-desc">Caption:</span> {{ meme.caption }}</p>
+        <p class="title-caption title"><span class="red-desc">Title:</span> {{ meme.title }}<br><span class="red-desc">Caption:</span> {{ meme.caption }} </p>
+        
     </div>
 
 </div>
@@ -24,11 +25,14 @@
     {% endfor %}
 </div><br><br>
 
+{% if user.is_authenticated %}
 <form action="{% url 'add_comment' meme.id %}" method="POST">
     {% csrf_token %}
     {{comment_form.as_p}}
     <input type="submit" class="btn" value="Add Comment" />
-</form><br><br>
+</form>
+{% endif %}
+<br><br>
 
 
 
