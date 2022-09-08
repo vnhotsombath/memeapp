@@ -11,7 +11,6 @@ import datetime
 import uuid
 import boto3
 
-
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET ='beastcoastmemer'
 
@@ -53,6 +52,7 @@ def new_meme(request):
         new_meme.save() # saves the meme to the database!
     # import redirect at the top
   return render(request, 'new_meme.html')
+
 
 @login_required
 def create_meme(request):
@@ -107,6 +107,5 @@ def add_comment(request, meme_id):
         #Comment.objects.create(user=request.user, meme_id=meme_id, comment=request.POST.get('comment'), date=current_datetime)
         new_comment.save()
       
-
     return redirect('detail', meme_id=meme_id)
 
