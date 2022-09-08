@@ -11,8 +11,8 @@ import datetime
 import uuid
 import boto3
 
-S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
-BUCKET ='beastcoastmemer'
+S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
+BUCKET ='beastcoastmeme'
 
 # Create your views here.
 
@@ -33,7 +33,7 @@ def signup(request):
       user = form.save()
       #This is how we log a user in via code
       login(request, user)
-      return redirect('/')
+      return render(request, 'meme/intro.html')
     else:
       error_message = 'Invalid sign up - try again'
 # A bad POST or GET request, so render signup.html with an empty form
