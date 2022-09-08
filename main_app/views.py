@@ -54,7 +54,7 @@ def new_meme(request):
     # import redirect at the top
   return render(request, 'new_meme.html')
 
-
+@login_required
 def create_meme(request):
  
   photo_file = request.FILES.get('photo-file', None)
