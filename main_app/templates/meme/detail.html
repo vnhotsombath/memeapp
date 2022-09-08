@@ -9,8 +9,8 @@
         <div class="img">
             <img src="{{ meme.image_url }}" alt="" class="title-caption detail-img">
         </div>
-        <p class="title-caption"><span class="red-desc">Caption:</span> {{ meme.caption }}</p>
-        <p class="title-caption"><span class="red-desc">Posted on:</span> {{ meme.date }}</p>
+        <p class="title-caption"><span class="red-desc">Caption:</span> {{ meme.caption }}<br><span class="red-desc">Posted on:</span> {{ meme.date }}</p>
+        <!-- <p class="title-caption"><span class="red-desc">Posted on:</span> {{ meme.date }}</p> -->
     </div>
 
 </div>
@@ -31,6 +31,7 @@
     <input type="submit" class="btn" value="Add Comment" />
 </form><br><br>
 
-<a href="{% url 'meme_delete' meme.id %}" class="btn delete-meme">Delete Meme <i class='far fa-trash-alt' style='font-size:24px'></i></a>
-
+<div class="delete-btn">
+    <a href="{% url 'meme_delete' meme.id %}" class="btn delete-meme">Delete Meme <i class='far fa-trash-alt' style='font-size:24px'></i></a>
+</div>
 {% endblock %}
