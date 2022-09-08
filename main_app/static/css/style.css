@@ -82,11 +82,13 @@ h1 {
 
 .comment-text {
     color: black;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 23px;
 }
 
 .username {
     color: rgb(34, 34, 153);
+    font-family: 'Staatliches', cursive;
 }
 
 /* FORM PAGES */
