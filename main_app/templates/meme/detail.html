@@ -30,6 +30,6 @@
     <input type="submit" class="btn" value="Add Comment" />
 </form><br><br>
 
-
+<a href="{% url 'meme_delete' meme.id %}" class="btn delete-meme">Delete Meme <i class='far fa-trash-alt' style='font-size:24px'></i></a>
 
 {% endblock %}

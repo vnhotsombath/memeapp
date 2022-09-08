@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 from django.views.generic import ListView
 from django.contrib.auth import login
 from .models import Meme, Comment
@@ -12,7 +12,7 @@ import uuid
 import boto3
 
 S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
-BUCKET ='beastcoastmeme'
+BUCKET ='memeappbucket'
 
 # Create your views here.
 
@@ -108,4 +108,8 @@ def add_comment(request, meme_id):
         new_comment.save()
       
     return redirect('detail', meme_id=meme_id)
+
+class MemeDelete(DeleteView):
+    model = Meme 
+    success_url = '/memes/'
 
