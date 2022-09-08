@@ -6,7 +6,9 @@
     <div class="post-bundle">
         <p class="title-caption"><span class="red-desc">Title:</span><br> {{ meme.title }}</p>
         <p class="title-caption">Posted By: {{ meme.user }}</p>
-        <a href="{% url 'detail' meme.id %}"><img src="{{ meme.image_url }}" alt="" class="title-caption detail-img"> </a>
+        <div class="img">
+            <img src="{{ meme.image_url }}" alt="" class="title-caption detail-img">
+        </div>
         <p class="title-caption"><span class="red-desc">Caption:</span> {{ meme.caption }}</p>
     </div>
 
