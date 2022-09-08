@@ -4,9 +4,9 @@ from .models import Meme, Comment
 class MemeForm(ModelForm):
 	class Meta:
 		model = Meme 
-		fields = ['title', 'caption', 'image_url']
+		fields = ['title', 'caption', 'date', 'image_url']
 
 class CommentForm(ModelForm):
 	class Meta:
 		model = Comment 
-		fields = ['date', 'text']
+		fields = ['text']

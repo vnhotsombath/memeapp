@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse 
+from django.utils import timezone 
 
 # Create your models here.
 class Meme(models.Model):
@@ -8,6 +9,7 @@ class Meme(models.Model):
     caption = models.CharField(max_length=200)
     image_url = models.CharField(max_length= 200)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.CharField(max_length=10, default=timezone.now())
 
 
 class Comment(models.Model):
@@ -19,5 +21,3 @@ class Comment(models.Model):
   
     def get_absolute_url(self):
         return reverse('detail', kwargs={'meme_id': self.meme.id})
-        
-
