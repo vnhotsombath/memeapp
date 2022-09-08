@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView
 from django.views.generic import ListView
 from django.contrib.auth import login
@@ -10,9 +11,8 @@ import datetime
 import uuid
 import boto3
 
-
-S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
-BUCKET ='beastcoastmemeapp'
+S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
+BUCKET ='beastcoastmemer'
 
 
 # Create your views here.
@@ -42,7 +42,7 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
 
-
+@login_required
 def new_meme(request):
   form = MemeForm(request.POST)
   if form.is_valid():
@@ -53,8 +53,6 @@ def new_meme(request):
         new_meme.save() # saves the meme to the database!
     # import redirect at the top
   return render(request, 'new_meme.html')
-
-
 
 
 def create_meme(request):
@@ -80,25 +78,21 @@ def create_meme(request):
 
   return redirect('/memes')
 
-
-
-
 def memes_index(request):
   memes = Meme.objects.all()
   return render(request, 'meme/index.html', { 'memes': memes})
 
-
-
+@login_required
 def intro(request):
   return render(request, 'meme/intro.html')
 
-
+@login_required
 def meme_detail(request, meme_id):
   meme = Meme.objects.get(id=meme_id)
   comment_form = CommentForm()
   return render(request,'meme/detail.html', {'meme': meme, 'comment_form': comment_form})
 
-
+@login_required
 def add_comment(request, meme_id):
     form = CommentForm(request.POST)
     current_datetime = datetime.datetime.now()
@@ -113,6 +107,5 @@ def add_comment(request, meme_id):
         #Comment.objects.create(user=request.user, meme_id=meme_id, comment=request.POST.get('comment'), date=current_datetime)
         new_comment.save()
       
-
     return redirect('detail', meme_id=meme_id)
 
