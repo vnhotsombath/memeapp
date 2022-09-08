@@ -200,8 +200,10 @@ input[type="file"] {
 }
 
 .detail-img {
-    border: 2px solid black;
+    border: 2px solid rgb(3, 0, 94);
     width: 100%;
+    border-radius: 3%;
+    box-shadow: 5px 5px 2px black;
 }
 
 
@@ -217,7 +219,8 @@ input[type="file"] {
 
 
 .red-desc {
-    color: red;
+    color: rgb(0, 7, 98);
+    font-size: 40px;
 }
 
 .post-bundle {
@@ -229,10 +232,18 @@ input[type="file"] {
 
 .title-caption {
     text-align: center;
-    font-family: 'Staatliches', cursive;
     color: white;
     font-size: 30px;
+    font-family: 'Roboto Mono', monospace;
 
+}
+
+.comment-container {
+    text-align: center;
+    border: 5px solid rgb(34, 34, 153);
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
 }
 
 /* NAV STARTS HERE */
@@ -405,9 +416,9 @@ nav a:hover {
 
     .title-caption {
         text-align: center;
-        font-family: 'Staatliches', cursive;
+        font-family: 'Roboto Mono', monospace;
         color: white;
-        font-size: 30px;
+        font-size: 25px;
 
     }
 
@@ -455,6 +466,8 @@ nav a:hover {
         width: 50%;
         margin: 0 auto;
         background-color: white;
+        box-shadow: 5px 5px 2px black;
+        border-radius: 10px;
     }
   
 
