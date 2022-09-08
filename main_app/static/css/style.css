@@ -67,6 +67,28 @@ h1 {
     font-size: 60px;
 }
 
+.comment-header {
+    text-align: center;
+    
+}
+
+.comment-container {
+    text-align: center;
+    border: 5px solid red;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.comment-text {
+    color: black;
+    font-family: 'Staatliches', cursive;
+}
+
+.username {
+    color: rgb(34, 34, 153);
+}
+
 /* FORM PAGES */
 
 .form-container {
@@ -407,12 +429,20 @@ nav a:hover {
 
       .detail-img {
         border: 2px solid black;
-        max-width: 450px;
+        max-width: 600px;
     }
 
     .img {
         display: flex;
         justify-content: center;
+    }
+
+    .comment-container {
+        text-align: center;
+        border: 5px solid rgb(34, 34, 153);
+        width: 50%;
+        margin: 0 auto;
+        background-color: white;
     }
   
 

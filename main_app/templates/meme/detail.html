@@ -14,17 +14,22 @@
 
 </div>
 
+<h1 class="comment-header">Comments</h1>
+<div class="comment-container">
+    
+    {% for comment in meme.comment_set.all %}
+    <div class="comments">
+        <p class="comment-text"><span class="username">{{ user.username }}:</span> {{ comment.text }}</p>
+    </div>
+    {% endfor %}
+</div><br><br>
+
 <form action="{% url 'add_comment' meme.id %}" method="POST">
     {% csrf_token %}
     {{comment_form.as_p}}
     <input type="submit" class="btn" value="Add Comment" />
-</form>
+</form><br><br>
 
-{% for comment in meme.comment_set.all %}
-<div>
-    <p>{{ comment.text }}</p>
-</div>
-{% endfor %}
 
 
 {% endblock %}
