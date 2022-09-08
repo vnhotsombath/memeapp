@@ -19,7 +19,7 @@
     
     {% for comment in meme.comment_set.all %}
     <div class="comments">
-        <p class="comment-text"><span class="username">{{ user.username }}:</span> {{ comment.text }}</p>
+        <p class="comment-text"><span class="username">{{ comment.user.username }}:</span> {{ comment.text }}</p>
     </div>
     {% endfor %}
 </div><br><br>
