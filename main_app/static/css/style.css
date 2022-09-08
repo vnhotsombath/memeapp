@@ -16,6 +16,16 @@ h1 {
 
 /* HOME PAGE */
 
+.home-about{
+
+text-align: center;
+color: white;
+width: 50%;
+margin: 0 auto;
+font-family: 'Staatliches', cursive;
+
+}
+
 .home-dogs {
     display: flex;
     justify-content: center;
