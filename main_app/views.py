@@ -11,8 +11,8 @@ import uuid
 import boto3
 
 
-S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
-BUCKET ='beastcoastmemer'
+S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
+BUCKET ='beastcoastmemeapp'
 
 
 # Create your views here.
