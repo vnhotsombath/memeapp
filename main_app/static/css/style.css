@@ -425,12 +425,14 @@ nav a:hover {
     .body-container img {
         height: 100%;
         width: 100%;
-        min-width: 290px;  
-        max-height: 350px;
-        object-fit: cover;
-        border: 2px solid rgb(0, 0, 0);
+        /* min-width: 290px;  
+        max-height: 350px; */
+        object-fit: fill;
+        border: 4px solid rgb(5, 0, 109);
+        border-radius: 10px;
         /* transition: transform 350ms; */
-      }
+        box-shadow: 5px 10px rgba(0, 0, 0, 0.61);
+    }
 
       .body-container img:hover {
         /* transform: translateY(-1.5px); */
