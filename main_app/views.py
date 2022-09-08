@@ -11,8 +11,8 @@ import datetime
 import uuid
 import boto3
 
-S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
-BUCKET ='memeappbucket'
+S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
+BUCKET ='beastcoastmemer'
 
 # Create your views here.
 
