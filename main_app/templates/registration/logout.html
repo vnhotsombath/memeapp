@@ -2,6 +2,12 @@
 <html>
     <head>
         <style>
+
+          body{
+
+background: rgba(71,83,71,255);
+            
+          }
         a:link, a:visited {
           background-color: #7f9be4;
           color: white;
@@ -14,19 +20,37 @@
         a:hover, a:active {
           background-color: rgb(10, 10, 228);
         }
+
+          ul {
+    display: table;
+    width: 60%;
+}
+li {
+    display: table-cell;
+}
+li.left {text-align: left; padding-left: 20%;}
+li.right {text-align: right; padding-right: 20%;}
         </style>
         </head>
-<body style="text-align: center;">     
-    <img src="https://imgur.com/Dg1roI7.png"
-        width=40% height=40%>
+  
+<body style="text-align: center; ">  
+  <h1>LOG OUT</h1>
+  <br>
+    <img style=" border: 2px;
+  border-radius: 50px;       box-shadow: 5px 5px 2px black;
+" src="https://imgur.com/0xSDaUq.png"
+        width=40% height=50%>
 
 <br>
-<a href="/accounts/logout" target="_blank">Yes I am sure!</a>
-<br>
-<br>
-<a href="{% url 'memes' %}" target="_blank">Just send me back!</a>
-
-
+  <br>
+<center>
+<ul>
+    <li class="left"><a href="/accounts/logout" target="_blank">Yes I am sure!</a></li>
+    <li><button></button></li>
+    <li class="right"><a href="{% url 'memes' %}" target="_blank">Just send me back!</a></li>
+</ul>
+  
+</center>
 
 </body>
  
