@@ -14,7 +14,6 @@ import boto3
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET ='beastcoastmemer'
 
-
 # Create your views here.
 
 def home(request):
@@ -55,6 +54,7 @@ def new_meme(request):
   return render(request, 'new_meme.html')
 
 
+@login_required
 def create_meme(request):
  
   photo_file = request.FILES.get('photo-file', None)
@@ -86,7 +86,7 @@ def memes_index(request):
 def intro(request):
   return render(request, 'meme/intro.html')
 
-@login_required
+@login_required 
 def meme_detail(request, meme_id):
   meme = Meme.objects.get(id=meme_id)
   comment_form = CommentForm()
