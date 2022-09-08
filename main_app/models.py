@@ -9,7 +9,7 @@ class Meme(models.Model):
     caption = models.CharField(max_length=200)
     image_url = models.CharField(max_length= 200)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    date = models.CharField(max_length=100, default=timezone.now())
+    date = models.DateField(default=timezone.now())
 
 
 class Comment(models.Model):

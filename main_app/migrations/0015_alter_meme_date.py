@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='meme',
             name='date',
-            field=models.CharField(default=datetime.datetime(2022, 9, 8, 17, 6, 6, 45328, tzinfo=datetime.timezone.utc), max_length=100),
+            field=models.DateField(default=datetime.datetime(2022, 9, 8, 17, 6, 6, 45328, tzinfo=datetime.timezone.utc)),
         ),
     ]
